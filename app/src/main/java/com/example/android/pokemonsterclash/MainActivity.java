@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar prgB;
     int redScore = 0;
     int blueScore = 0;
+    int redMatchScore = 0;
+    int blueMatchScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +30,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void displayScoreB(int score){
-        TextView scoreView = (TextView) findViewById(R.id.blue_score);
-        scoreView.setText(String.valueOf(score));
+    public void displayMatchScoreR(int score){
+        TextView matchView = (TextView) findViewById(R.id.red_match_score);
+        matchView.setText(String.valueOf(score));
     }
 
-    public void plusOneBlue(View view){
-        prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-        prgR.incrementProgressBy(-10);
-        blueScore += 1;
-        displayScoreB(blueScore);
+    public void displayMatchScoreB(int score){
+        TextView matchView = (TextView) findViewById(R.id.blue_match_score);
+        matchView.setText(String.valueOf(score));
     }
+
 
     public void displayScoreR(int score){
         TextView scoreView = (TextView) findViewById(R.id.red_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    public void displayScoreB(int score){
+        TextView scoreView = (TextView) findViewById(R.id.blue_score);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -50,6 +56,52 @@ public class MainActivity extends AppCompatActivity {
         prgB.incrementProgressBy(-10);
         redScore += 1;
         displayScoreR(redScore);
+        if (redScore >= 11 && blueScore <=(redScore - 2)){
+            redMatchScore += 1;
+            displayMatchScoreR(redMatchScore);
+            prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+            prgR.setProgress(110);
+            prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+            prgB.setProgress(110);
+            redScore = 0;
+            displayScoreR(redScore);
+            blueScore = 0;
+            displayScoreB(blueScore);
+        }
+    }
+
+    public void plusOneBlue(View view){
+        prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+        prgR.incrementProgressBy(-10);
+        blueScore += 1;
+        displayScoreB(blueScore);
+        if (blueScore >= 11 && redScore <=(blueScore - 2)){
+            blueMatchScore += 1;
+            displayMatchScoreB(blueMatchScore);
+            prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+            prgR.setProgress(110);
+            prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+            prgB.setProgress(110);
+            redScore = 0;
+            displayScoreR(redScore);
+            blueScore = 0;
+            displayScoreB(blueScore);
+        }
+    }
+
+    public void resetButton(View view){
+        prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+        prgR.setProgress(110);
+        prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+        prgB.setProgress(110);
+        redScore = 0;
+        displayScoreR(redScore);
+        blueScore = 0;
+        displayScoreB(blueScore);
+        redMatchScore = 0;
+        displayMatchScoreR(redMatchScore);
+        blueMatchScore = 0;
+        displayMatchScoreB(blueMatchScore);
     }
 
 
