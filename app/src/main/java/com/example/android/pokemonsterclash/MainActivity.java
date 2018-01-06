@@ -34,14 +34,20 @@ public class MainActivity extends AppCompatActivity {
     ImageView blastoise;
 
     Animation blastoiseFloat;
+    Animation charizardFloat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         blastoise = (ImageView) findViewById(R.id.blastoise_image);
+        charizard = (ImageView) findViewById(R.id.charizard_image);
+
         blastoiseFloat = AnimationUtils.loadAnimation(this, R.anim.blastoisefloat);
+        charizardFloat = AnimationUtils.loadAnimation(this,R.anim.charizardfloat);
+
         blastoise.startAnimation(blastoiseFloat);
+        charizard.startAnimation(charizardFloat);
     }
 
     public void displayMatchScoreR(int score) {
