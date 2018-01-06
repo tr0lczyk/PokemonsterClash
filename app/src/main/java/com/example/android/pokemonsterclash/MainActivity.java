@@ -18,7 +18,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import org.w3c.dom.Text;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         blastoiseAttack = (ImageView) findViewById(R.id.water_wave);
         charizardAttack = (ImageView) findViewById(R.id.fire_wave);
 
-        blastoiseFloat = AnimationUtils.loadAnimation(this,R.anim.blastoisefloat);
-        charizardFloat = AnimationUtils.loadAnimation(this,R.anim.charizardfloat);
+        blastoiseFloat = AnimationUtils.loadAnimation(this, R.anim.blastoisefloat);
+        charizardFloat = AnimationUtils.loadAnimation(this, R.anim.charizardfloat);
 
         blastoise.startAnimation(blastoiseFloat);
         charizard.startAnimation(charizardFloat);
@@ -76,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-    public void resetFunction(){
+    public void resetFunction() {
         prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
         prgR.setProgress(110);
         prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         displayMatchScoreB(blueMatchScore);
     }
 
-    public void gameResetFunction(){
+    public void gameResetFunction() {
         prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
         prgR.setProgress(110);
         prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
@@ -106,22 +108,24 @@ public class MainActivity extends AppCompatActivity {
         resetFunction();
     }
 
-    public void blueAttacks(){
+    public void blueAttacks() {
         blastoiseAttack.setVisibility(View.VISIBLE);
         blastoiseAttack.animate().alpha(1.0f).setDuration(200).withEndAction(new Runnable() {
             @Override
             public void run() {
                 blastoiseAttack.setVisibility(View.GONE);
-            }});
+            }
+        });
     }
 
-    public void redAttacks(){
+    public void redAttacks() {
         charizardAttack.setVisibility(View.VISIBLE);
         charizardAttack.animate().alpha(1.0f).setDuration(200).withEndAction(new Runnable() {
             @Override
             public void run() {
                 charizardAttack.setVisibility(View.GONE);
-            }});
+            }
+        });
     }
 
     public void plusOneRed(View view) {
@@ -133,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         if (redScore >= 11 && blueScore <= (redScore - 2)) {
             redMatchScore += 1;
             displayMatchScoreR(redMatchScore);
-            if (redMatchScore <= 2){
+            if (redMatchScore <= 2) {
                 Toast gameToast = Toast.makeText(this, "PLAYER RED WINS GAME", Toast.LENGTH_SHORT);
                 gameToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 gameToast.show();
@@ -158,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         if (blueScore >= 11 && redScore <= (blueScore - 2)) {
             blueMatchScore += 1;
             displayMatchScoreB(blueMatchScore);
-            if (blueMatchScore <= 2){
+            if (blueMatchScore <= 2) {
                 Toast gameToast = Toast.makeText(this, "PLAYER BLUE WINS GAME", Toast.LENGTH_SHORT);
                 gameToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 gameToast.show();
