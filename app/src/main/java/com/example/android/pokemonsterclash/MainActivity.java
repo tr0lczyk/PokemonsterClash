@@ -24,12 +24,15 @@ import org.w3c.dom.Text;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
     ProgressBar prgR;
     ProgressBar prgB;
+
     int redScore = 0;
     int blueScore = 0;
     int redMatchScore = 0;
     int blueMatchScore = 0;
+
     ImageView charizard;
     ImageView blastoise;
     ImageView blastoiseAttack;
@@ -48,15 +51,12 @@ public class MainActivity extends AppCompatActivity {
         blastoiseAttack = (ImageView) findViewById(R.id.water_wave);
         charizardAttack = (ImageView) findViewById(R.id.fire_wave);
 
-        blastoiseFloat = AnimationUtils.loadAnimation(this, R.anim.blastoisefloat);
+        blastoiseFloat = AnimationUtils.loadAnimation(this,R.anim.blastoisefloat);
         charizardFloat = AnimationUtils.loadAnimation(this,R.anim.charizardfloat);
         attackMotion = AnimationUtils.loadAnimation(this,R.anim.attack);
 
-
         blastoise.startAnimation(blastoiseFloat);
         charizard.startAnimation(charizardFloat);
-
-
     }
 
     public void displayMatchScoreR(int score) {
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         matchView.setText(String.valueOf(score));
     }
 
-
     public void displayScoreR(int score) {
         TextView scoreView = (TextView) findViewById(R.id.red_score);
         scoreView.setText(String.valueOf(score));
@@ -81,12 +80,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void plusOneRed(View view) {
+        redAttacks();
         prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
         prgB.incrementProgressBy(-10);
         redScore += 1;
         displayScoreR(redScore);
         if (redScore >= 11 && blueScore <= (redScore - 2)) {
             redMatchScore += 1;
+            displayMatchScoreR(redMatchScore);
             if (redMatchScore <= 2){
                 Toast gameToast = Toast.makeText(this, "PLAYER RED WINS GAME", Toast.LENGTH_SHORT);
                 gameToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
@@ -122,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void plusOneBlue(View view) {
+        blueAttacks();
         prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
         prgR.incrementProgressBy(-10);
         blueScore += 1;
@@ -178,9 +180,24 @@ public class MainActivity extends AppCompatActivity {
         displayMatchScoreB(blueMatchScore);
     }
 
-    public void redAttacks(){
+    public void blueAttacks(){
+        blastoiseAttack.setVisibility(View.VISIBLE);
+        blastoiseAttack.animate().alpha(1.0f).setDuration(100).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                blastoiseAttack.setVisibility(View.GONE);
+            }});
 
     }
 
+    public void redAttacks(){
+        charizardAttack.setVisibility(View.VISIBLE);
+        charizardAttack.animate().alpha(1.0f).setDuration(100).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                charizardAttack.setVisibility(View.GONE);
+            }});
+
+    }
 
 }
