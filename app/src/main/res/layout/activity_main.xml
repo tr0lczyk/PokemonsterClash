@@ -94,9 +94,9 @@
                                             android:indeterminate="false"
                                             android:max="110"
                                             android:padding="1dp"
-                                            android:progress="110" />
+                                            android:progress="110"
+                                            android:id="@+id/red_progress_bar"/>
                                     </LinearLayout>
-
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -123,7 +123,6 @@
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -160,15 +159,13 @@
                                         android:gravity="center"
                                         android:text="0"
                                         android:textColor="#000"
-                                        android:textSize="52sp" />
+                                        android:textSize="52sp"
+                                        android:id="@+id/red_score"/>
                                 </LinearLayout>
-
                             </LinearLayout>
-
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -179,11 +176,7 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/charizard2" />
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -266,9 +259,9 @@
                                             android:indeterminate="false"
                                             android:max="110"
                                             android:padding="1dp"
-                                            android:progress="110" />
+                                            android:progress="110"
+                                            android:id="@+id/blue_progress_bar"/>
                                     </LinearLayout>
-
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -295,7 +288,6 @@
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -332,17 +324,15 @@
                                         android:gravity="center"
                                         android:text="0"
                                         android:textColor="#000"
-                                        android:textSize="52sp" />
+                                        android:textSize="52sp"
+                                        android:id="@+id/blue_score"/>
                                 </LinearLayout>
-
                             </LinearLayout>
-
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -372,10 +362,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="red +1"
-                            android:textColor="#FF0000"/>
+                            android:textColor="#FF0000"
+                            android:id="@+id/red_button"
+                            android:onClick="plusOneRed"/>
 
                     </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -389,7 +380,6 @@
                             android:text="reset"/>
 
                     </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -401,16 +391,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="blue +1"
-                            android:textColor="#0000FF"/>
+                            android:textColor="#0000FF"
+                            android:id="@+id/blue_button"
+                            android:onClick="plusOneBlue"/>
 
                     </LinearLayout>
-
-
                 </LinearLayout>
             </LinearLayout>
-
-
         </LinearLayout>
-
     </LinearLayout>
 </RelativeLayout>
