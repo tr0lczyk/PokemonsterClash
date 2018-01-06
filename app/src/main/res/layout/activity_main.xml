@@ -86,6 +86,7 @@
                                             android:textSize="16dp" />
 
                                         <ProgressBar
+                                            android:id="@+id/red_progress_bar"
                                             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
@@ -94,9 +95,9 @@
                                             android:indeterminate="false"
                                             android:max="110"
                                             android:padding="1dp"
-                                            android:progress="110"
-                                            android:id="@+id/red_progress_bar"/>
+                                            android:progress="110" />
                                     </LinearLayout>
+
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -114,16 +115,17 @@
                                             android:textSize="18sp" />
 
                                         <TextView
+                                            android:id="@+id/red_match_score"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_weight="3"
                                             android:text="0"
-                                            android:textSize="30sp"
-                                            android:id="@+id/red_match_score"/>
+                                            android:textSize="30sp" />
                                     </LinearLayout>
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -154,31 +156,46 @@
                                         android:textSize="24sp" />
 
                                     <TextView
+                                        android:id="@+id/red_score"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:text="0"
                                         android:textColor="#000"
-                                        android:textSize="52sp"
-                                        android:id="@+id/red_score"/>
+                                        android:textSize="52sp" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
-                    <ImageView
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/charizard2"
-                        android:id="@+id/charizard_image"/>
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/charizard_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/charizard2" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/water4"
+                            android:id="@+id/water_wave"
+                            android:visibility="gone"/>
+
+                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -190,11 +207,24 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
 
-                    <ImageView
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/blastoise2"
-                        android:id="@+id/blastoise_image"/>
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/blastoise_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/blastoise2" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/fire"
+                            android:id="@+id/fire_wave"
+                            android:visibility="gone"/>
+
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -254,6 +284,7 @@
                                             android:textSize="16dp" />
 
                                         <ProgressBar
+                                            android:id="@+id/blue_progress_bar"
                                             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
@@ -262,9 +293,9 @@
                                             android:indeterminate="false"
                                             android:max="110"
                                             android:padding="1dp"
-                                            android:progress="110"
-                                            android:id="@+id/blue_progress_bar"/>
+                                            android:progress="110" />
                                     </LinearLayout>
+
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -282,16 +313,17 @@
                                             android:textSize="18sp" />
 
                                         <TextView
+                                            android:id="@+id/blue_match_score"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_weight="3"
                                             android:text="0"
-                                            android:textSize="30sp"
-                                            android:id="@+id/blue_match_score"/>
+                                            android:textSize="30sp" />
                                     </LinearLayout>
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -322,14 +354,14 @@
                                         android:textSize="24sp" />
 
                                     <TextView
+                                        android:id="@+id/blue_score"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:text="0"
                                         android:textColor="#000"
-                                        android:textSize="52sp"
-                                        android:id="@+id/blue_score"/>
+                                        android:textSize="52sp" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -337,6 +369,7 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -359,46 +392,48 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:padding="8dp"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:padding="8dp">
 
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="red +1"
-                            android:textColor="#FF0000"
                             android:id="@+id/red_button"
-                            android:onClick="plusOneRed"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="plusOneRed"
+                            android:text="red +1"
+                            android:textColor="#FF0000" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:padding="8dp"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:padding="8dp">
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="rematch"
-                            android:onClick="resetButton"/>
+                            android:onClick="resetButton"
+                            android:text="rematch" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:padding="8dp"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:padding="8dp">
 
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="blue +1"
-                            android:textColor="#0000FF"
                             android:id="@+id/blue_button"
-                            android:onClick="plusOneBlue"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="plusOneBlue"
+                            android:text="blue +1"
+                            android:textColor="#0000FF" />
 
                     </LinearLayout>
                 </LinearLayout>

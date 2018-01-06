@@ -2,6 +2,6 @@
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
     android:toYDelta="5%p"
     android:fromYDelta="-5%p"
-    android:duration="600"
+    android:duration="800"
     android:repeatCount="infinite"
     android:repeatMode="reverse"/>
