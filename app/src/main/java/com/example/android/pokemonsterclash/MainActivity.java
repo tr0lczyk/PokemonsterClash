@@ -32,9 +32,12 @@ public class MainActivity extends AppCompatActivity {
     int blueMatchScore = 0;
     ImageView charizard;
     ImageView blastoise;
+    ImageView blastoiseAttack;
+    ImageView charizardAttack;
 
     Animation blastoiseFloat;
     Animation charizardFloat;
+    Animation attackMotion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         blastoise = (ImageView) findViewById(R.id.blastoise_image);
         charizard = (ImageView) findViewById(R.id.charizard_image);
+        blastoiseAttack = (ImageView) findViewById(R.id.water_wave);
+        charizardAttack = (ImageView) findViewById(R.id.fire_wave);
 
         blastoiseFloat = AnimationUtils.loadAnimation(this, R.anim.blastoisefloat);
         charizardFloat = AnimationUtils.loadAnimation(this,R.anim.charizardfloat);
+        attackMotion = AnimationUtils.loadAnimation(this,R.anim.attack);
+
 
         blastoise.startAnimation(blastoiseFloat);
         charizard.startAnimation(charizardFloat);
+
+
     }
 
     public void displayMatchScoreR(int score) {
@@ -167,6 +176,10 @@ public class MainActivity extends AppCompatActivity {
         displayMatchScoreR(redMatchScore);
         blueMatchScore = 0;
         displayMatchScoreB(blueMatchScore);
+    }
+
+    public void redAttacks(){
+
     }
 
 
