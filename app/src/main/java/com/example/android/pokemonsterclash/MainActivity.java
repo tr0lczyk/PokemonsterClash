@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -59,14 +61,35 @@ public class MainActivity extends AppCompatActivity {
         if (redScore >= 11 && blueScore <=(redScore - 2)){
             redMatchScore += 1;
             displayMatchScoreR(redMatchScore);
-            prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-            prgR.setProgress(110);
-            prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
-            prgB.setProgress(110);
-            redScore = 0;
-            displayScoreR(redScore);
-            blueScore = 0;
-            displayScoreB(blueScore);
+            Toast gameToast = Toast.makeText(this,"PLAYER RED WINS GAME", Toast.LENGTH_LONG);
+            gameToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            gameToast.show();
+            if (redMatchScore == 3 && blueMatchScore <= 2){
+                Toast matchToast = Toast.makeText(this,"PLAYER RED WON " + redMatchScore + ":" + blueMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
+                matchToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                matchToast.show();
+                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+                prgR.setProgress(110);
+                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+                prgB.setProgress(110);
+                redScore = 0;
+                displayScoreR(redScore);
+                blueScore = 0;
+                displayScoreB(blueScore);
+                redMatchScore = 0;
+                displayMatchScoreR(redMatchScore);
+                blueMatchScore = 0;
+                displayMatchScoreB(blueMatchScore);
+            } else {
+                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+                prgR.setProgress(110);
+                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+                prgB.setProgress(110);
+                redScore = 0;
+                displayScoreR(redScore);
+                blueScore = 0;
+                displayScoreB(blueScore);
+            }
         }
     }
 
@@ -78,14 +101,35 @@ public class MainActivity extends AppCompatActivity {
         if (blueScore >= 11 && redScore <=(blueScore - 2)){
             blueMatchScore += 1;
             displayMatchScoreB(blueMatchScore);
-            prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-            prgR.setProgress(110);
-            prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
-            prgB.setProgress(110);
-            redScore = 0;
-            displayScoreR(redScore);
-            blueScore = 0;
-            displayScoreB(blueScore);
+            Toast gameToast = Toast.makeText(this,"PLAYER RED WINS GAME", Toast.LENGTH_LONG);
+            gameToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            gameToast.show();
+            if (blueMatchScore == 3 && redMatchScore <= 2){
+                Toast matchToast = Toast.makeText(this,"PLAYER BLUE WON " + blueMatchScore + ":" + redMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
+                matchToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                matchToast.show();
+                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+                prgR.setProgress(110);
+                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+                prgB.setProgress(110);
+                redScore = 0;
+                displayScoreR(redScore);
+                blueScore = 0;
+                displayScoreB(blueScore);
+                redMatchScore = 0;
+                displayMatchScoreR(redMatchScore);
+                blueMatchScore = 0;
+                displayMatchScoreB(blueMatchScore);
+            } else {
+                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+                prgR.setProgress(110);
+                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+                prgB.setProgress(110);
+                redScore = 0;
+                displayScoreR(redScore);
+                blueScore = 0;
+                displayScoreB(blueScore);
+            }
         }
     }
 

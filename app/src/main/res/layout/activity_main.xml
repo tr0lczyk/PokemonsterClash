@@ -109,14 +109,14 @@
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
                                             android:gravity="center_vertical"
-                                            android:text="matches won:"
+                                            android:text="games won:"
                                             android:textAllCaps="true"
                                             android:textSize="18sp" />
 
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_weight="4"
+                                            android:layout_weight="3"
                                             android:text="0"
                                             android:textSize="30sp"
                                             android:id="@+id/red_match_score"/>
@@ -275,14 +275,14 @@
                                             android:layout_height="match_parent"
                                             android:layout_weight="1"
                                             android:gravity="center_vertical"
-                                            android:text="matches won:"
+                                            android:text="games won:"
                                             android:textAllCaps="true"
                                             android:textSize="18sp" />
 
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:layout_weight="4"
+                                            android:layout_weight="3"
                                             android:text="0"
                                             android:textSize="30sp"
                                             android:id="@+id/blue_match_score"/>
