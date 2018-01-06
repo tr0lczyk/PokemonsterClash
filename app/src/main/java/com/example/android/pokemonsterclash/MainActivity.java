@@ -76,6 +76,54 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
+    public void resetFunction(){
+        prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+        prgR.setProgress(110);
+        prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+        prgB.setProgress(110);
+        redScore = 0;
+        displayScoreR(redScore);
+        blueScore = 0;
+        displayScoreB(blueScore);
+        redMatchScore = 0;
+        displayMatchScoreR(redMatchScore);
+        blueMatchScore = 0;
+        displayMatchScoreB(blueMatchScore);
+    }
+
+    public void gameResetFunction(){
+        prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
+        prgR.setProgress(110);
+        prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
+        prgB.setProgress(110);
+        redScore = 0;
+        displayScoreR(redScore);
+        blueScore = 0;
+        displayScoreB(blueScore);
+    }
+
+    public void resetButton(View view) {
+        resetFunction();
+    }
+
+    public void blueAttacks(){
+        blastoiseAttack.setVisibility(View.VISIBLE);
+        blastoiseAttack.animate().alpha(1.0f).setDuration(200).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                blastoiseAttack.setVisibility(View.GONE);
+            }});
+    }
+
+    public void redAttacks(){
+        charizardAttack.setVisibility(View.VISIBLE);
+        charizardAttack.animate().alpha(1.0f).setDuration(200).withEndAction(new Runnable() {
+            @Override
+            public void run() {
+                charizardAttack.setVisibility(View.GONE);
+            }});
+    }
+
     public void plusOneRed(View view) {
         redAttacks();
         prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
@@ -94,27 +142,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast matchToast = Toast.makeText(this, "PLAYER RED WON " + redMatchScore + ":" + blueMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
                 matchToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 matchToast.show();
-                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-                prgR.setProgress(110);
-                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
-                prgB.setProgress(110);
-                redScore = 0;
-                displayScoreR(redScore);
-                blueScore = 0;
-                displayScoreB(blueScore);
-                redMatchScore = 0;
-                displayMatchScoreR(redMatchScore);
-                blueMatchScore = 0;
-                displayMatchScoreB(blueMatchScore);
+                resetFunction();
             } else {
-                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-                prgR.setProgress(110);
-                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
-                prgB.setProgress(110);
-                redScore = 0;
-                displayScoreR(redScore);
-                blueScore = 0;
-                displayScoreB(blueScore);
+                gameResetFunction();
             }
         }
     }
@@ -137,64 +167,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast matchToast = Toast.makeText(this, "PLAYER BLUE WON " + blueMatchScore + ":" + redMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
                 matchToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 matchToast.show();
-                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-                prgR.setProgress(110);
-                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
-                prgB.setProgress(110);
-                redScore = 0;
-                displayScoreR(redScore);
-                blueScore = 0;
-                displayScoreB(blueScore);
-                redMatchScore = 0;
-                displayMatchScoreR(redMatchScore);
-                blueMatchScore = 0;
-                displayMatchScoreB(blueMatchScore);
+                resetFunction();
             } else {
-                prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-                prgR.setProgress(110);
-                prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
-                prgB.setProgress(110);
-                redScore = 0;
-                displayScoreR(redScore);
-                blueScore = 0;
-                displayScoreB(blueScore);
+                gameResetFunction();
             }
         }
     }
-
-    public void resetButton(View view) {
-        prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
-        prgR.setProgress(110);
-        prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
-        prgB.setProgress(110);
-        redScore = 0;
-        displayScoreR(redScore);
-        blueScore = 0;
-        displayScoreB(blueScore);
-        redMatchScore = 0;
-        displayMatchScoreR(redMatchScore);
-        blueMatchScore = 0;
-        displayMatchScoreB(blueMatchScore);
-    }
-
-    public void blueAttacks(){
-        blastoiseAttack.setVisibility(View.VISIBLE);
-        blastoiseAttack.animate().alpha(1.0f).setDuration(100).withEndAction(new Runnable() {
-            @Override
-            public void run() {
-                blastoiseAttack.setVisibility(View.GONE);
-            }});
-
-    }
-
-    public void redAttacks(){
-        charizardAttack.setVisibility(View.VISIBLE);
-        charizardAttack.animate().alpha(1.0f).setDuration(100).withEndAction(new Runnable() {
-            @Override
-            public void run() {
-                charizardAttack.setVisibility(View.GONE);
-            }});
-
-    }
-
 }
