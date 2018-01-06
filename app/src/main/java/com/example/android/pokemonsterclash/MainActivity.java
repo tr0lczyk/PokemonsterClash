@@ -1,6 +1,9 @@
 package com.example.android.pokemonsterclash;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.res.AssetManager;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
@@ -8,6 +11,8 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -25,48 +30,56 @@ public class MainActivity extends AppCompatActivity {
     int blueScore = 0;
     int redMatchScore = 0;
     int blueMatchScore = 0;
+    ImageView charizard;
+    ImageView blastoise;
+
+    Animation blastoiseFloat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        blastoise = (ImageView) findViewById(R.id.blastoise_image);
+        blastoiseFloat = AnimationUtils.loadAnimation(this, R.anim.blastoisefloat);
+        blastoise.startAnimation(blastoiseFloat);
     }
 
-    public void displayMatchScoreR(int score){
+    public void displayMatchScoreR(int score) {
         TextView matchView = (TextView) findViewById(R.id.red_match_score);
         matchView.setText(String.valueOf(score));
     }
 
-    public void displayMatchScoreB(int score){
+    public void displayMatchScoreB(int score) {
         TextView matchView = (TextView) findViewById(R.id.blue_match_score);
         matchView.setText(String.valueOf(score));
     }
 
 
-    public void displayScoreR(int score){
+    public void displayScoreR(int score) {
         TextView scoreView = (TextView) findViewById(R.id.red_score);
         scoreView.setText(String.valueOf(score));
     }
 
-    public void displayScoreB(int score){
+    public void displayScoreB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.blue_score);
         scoreView.setText(String.valueOf(score));
     }
 
-    public void plusOneRed(View view){
+    public void plusOneRed(View view) {
         prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);
         prgB.incrementProgressBy(-10);
         redScore += 1;
         displayScoreR(redScore);
-        if (redScore >= 11 && blueScore <=(redScore - 2)){
+        if (redScore >= 11 && blueScore <= (redScore - 2)) {
             redMatchScore += 1;
-            displayMatchScoreR(redMatchScore);
-            Toast gameToast = Toast.makeText(this,"PLAYER RED WINS GAME", Toast.LENGTH_LONG);
-            gameToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
-            gameToast.show();
-            if (redMatchScore == 3 && blueMatchScore <= 2){
-                Toast matchToast = Toast.makeText(this,"PLAYER RED WON " + redMatchScore + ":" + blueMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
-                matchToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            if (redMatchScore <= 2){
+                Toast gameToast = Toast.makeText(this, "PLAYER RED WINS GAME", Toast.LENGTH_SHORT);
+                gameToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                gameToast.show();
+            }
+            if (redMatchScore == 3 && blueMatchScore <= 2) {
+                Toast matchToast = Toast.makeText(this, "PLAYER RED WON " + redMatchScore + ":" + blueMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
+                matchToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 matchToast.show();
                 prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
                 prgR.setProgress(110);
@@ -93,20 +106,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void plusOneBlue(View view){
+    public void plusOneBlue(View view) {
         prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
         prgR.incrementProgressBy(-10);
         blueScore += 1;
         displayScoreB(blueScore);
-        if (blueScore >= 11 && redScore <=(blueScore - 2)){
+        if (blueScore >= 11 && redScore <= (blueScore - 2)) {
             blueMatchScore += 1;
             displayMatchScoreB(blueMatchScore);
-            Toast gameToast = Toast.makeText(this,"PLAYER RED WINS GAME", Toast.LENGTH_LONG);
-            gameToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
-            gameToast.show();
-            if (blueMatchScore == 3 && redMatchScore <= 2){
-                Toast matchToast = Toast.makeText(this,"PLAYER BLUE WON " + blueMatchScore + ":" + redMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
-                matchToast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            if (blueMatchScore <= 2){
+                Toast gameToast = Toast.makeText(this, "PLAYER BLUE WINS GAME", Toast.LENGTH_SHORT);
+                gameToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                gameToast.show();
+            }
+            if (blueMatchScore == 3 && redMatchScore <= 2) {
+                Toast matchToast = Toast.makeText(this, "PLAYER BLUE WON " + blueMatchScore + ":" + redMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
+                matchToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 matchToast.show();
                 prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
                 prgR.setProgress(110);
@@ -133,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void resetButton(View view){
+    public void resetButton(View view) {
         prgR = (ProgressBar) findViewById(R.id.red_progress_bar);
         prgR.setProgress(110);
         prgB = (ProgressBar) findViewById(R.id.blue_progress_bar);

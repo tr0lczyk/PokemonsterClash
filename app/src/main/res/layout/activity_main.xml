@@ -175,7 +175,8 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/charizard2" />
+                        android:src="@drawable/charizard2"
+                        android:id="@+id/charizard_image"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -192,7 +193,8 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/blastoise2" />
+                        android:src="@drawable/blastoise2"
+                        android:id="@+id/blastoise_image"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -379,7 +381,7 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="reset"
+                            android:text="rematch"
                             android:onClick="resetButton"/>
 
                     </LinearLayout>
