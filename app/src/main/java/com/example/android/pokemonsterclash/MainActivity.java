@@ -18,9 +18,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.w3c.dom.Text;
-
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
     Animation blastoiseFloat;
     Animation charizardFloat;
-    Animation attackMotion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         blastoise = (ImageView) findViewById(R.id.blastoise_image);
         charizard = (ImageView) findViewById(R.id.charizard_image);
         blastoiseAttack = (ImageView) findViewById(R.id.water_wave);
@@ -53,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         blastoiseFloat = AnimationUtils.loadAnimation(this,R.anim.blastoisefloat);
         charizardFloat = AnimationUtils.loadAnimation(this,R.anim.charizardfloat);
-        attackMotion = AnimationUtils.loadAnimation(this,R.anim.attack);
 
         blastoise.startAnimation(blastoiseFloat);
         charizard.startAnimation(charizardFloat);
