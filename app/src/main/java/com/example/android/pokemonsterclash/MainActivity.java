@@ -138,12 +138,12 @@ public class MainActivity extends AppCompatActivity {
             redMatchScore += 1;
             displayMatchScoreR(redMatchScore);
             if (redMatchScore <= 2) {
-                Toast gameToast = Toast.makeText(this, "PLAYER RED WINS GAME", Toast.LENGTH_SHORT);
+                Toast gameToast = Toast.makeText(this, R.string.red_wins_game, Toast.LENGTH_SHORT);
                 gameToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 gameToast.show();
             }
             if (redMatchScore == 3 && blueMatchScore <= 2) {
-                Toast matchToast = Toast.makeText(this, "PLAYER RED WON " + redMatchScore + ":" + blueMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
+                Toast matchToast = Toast.makeText(this, getString(R.string.red_won_match) + redMatchScore + getString(R.string.colon) + blueMatchScore + getString(R.string.astonish_victory), Toast.LENGTH_LONG);
                 matchToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 matchToast.show();
                 resetFunction();
@@ -163,12 +163,12 @@ public class MainActivity extends AppCompatActivity {
             blueMatchScore += 1;
             displayMatchScoreB(blueMatchScore);
             if (blueMatchScore <= 2) {
-                Toast gameToast = Toast.makeText(this, "PLAYER BLUE WINS GAME", Toast.LENGTH_SHORT);
+                Toast gameToast = Toast.makeText(this, R.string.blue_wins_game, Toast.LENGTH_SHORT);
                 gameToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 gameToast.show();
             }
             if (blueMatchScore == 3 && redMatchScore <= 2) {
-                Toast matchToast = Toast.makeText(this, "PLAYER BLUE WON " + blueMatchScore + ":" + redMatchScore + "! ASTONISHING VICTORY!!!!", Toast.LENGTH_LONG);
+                Toast matchToast = Toast.makeText(this, getString(R.string.blue_won_match) + blueMatchScore + getString(R.string.colon) + redMatchScore + getString(R.string.astonish_victory), Toast.LENGTH_LONG);
                 matchToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 matchToast.show();
                 resetFunction();

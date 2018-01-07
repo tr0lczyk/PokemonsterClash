@@ -25,7 +25,7 @@
                                     <TextView
                                         android:id="@+id/player_name"
                                         style="@style/TextViewPlayer"
-                                        android:text="red" />
+                                        android:text="@string/red" />
 
                                     <LinearLayout
                                         android:id="@+id/hp_layout_one"
@@ -33,7 +33,7 @@
 
                                         <TextView
                                             style="@style/TextViewHp"
-                                            android:text="HP:" />
+                                            android:text="@string/hp" />
 
                                         <ProgressBar
                                             android:id="@+id/red_progress_bar"
@@ -52,12 +52,12 @@
 
                                         <TextView
                                             style="@style/TextViewMatch"
-                                            android:text="games won:" />
+                                            android:text="@string/games_won" />
 
                                         <TextView
                                             android:id="@+id/red_match_score"
                                             style="@style/TextViewMatchPoint"
-                                            android:text="0" />
+                                            android:text="@string/zero" />
                                     </LinearLayout>
                                 </RelativeLayout>
                             </LinearLayout>
@@ -71,12 +71,12 @@
 
                                     <TextView
                                         style="@style/TextViewScoring"
-                                        android:text="score" />
+                                        android:text="@string/score" />
 
                                     <TextView
                                         android:id="@+id/red_score"
                                         style="@style/TextViewNumber"
-                                        android:text="0" />
+                                        android:text="@string/zero" />
 
                                 </LinearLayout>
                             </LinearLayout>
@@ -130,7 +130,7 @@
                                     <TextView
                                         android:id="@+id/player_name_two"
                                         style="@style/TextViewPlayer"
-                                        android:text="blue" />
+                                        android:text="@string/blue" />
 
                                     <LinearLayout
                                         android:id="@+id/hp_layout_two"
@@ -138,7 +138,7 @@
 
                                         <TextView
                                             style="@style/TextViewHp"
-                                            android:text="HP:" />
+                                            android:text="@string/hp" />
 
                                         <ProgressBar
                                             android:id="@+id/blue_progress_bar"
@@ -157,12 +157,12 @@
 
                                         <TextView
                                             style="@style/TextViewMatch"
-                                            android:text="games won:" />
+                                            android:text="@string/games_won" />
 
                                         <TextView
                                             android:id="@+id/blue_match_score"
                                             style="@style/TextViewMatchPoint"
-                                            android:text="0" />
+                                            android:text="@string/zero" />
                                     </LinearLayout>
                                 </RelativeLayout>
                             </LinearLayout>
@@ -176,12 +176,12 @@
 
                                     <TextView
                                         style="@style/TextViewScoring"
-                                        android:text="score" />
+                                        android:text="@string/score" />
 
                                     <TextView
                                         android:id="@+id/blue_score"
                                         style="@style/TextViewNumber"
-                                        android:text="0" />
+                                        android:text="@string/zero" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -202,7 +202,7 @@
                             android:id="@+id/red_button"
                             style="@style/ButtonOne"
                             android:onClick="plusOneRed"
-                            android:text="red +1" />
+                            android:text="@string/red_1" />
 
                     </LinearLayout>
 
@@ -211,7 +211,7 @@
                         <Button
                             style="@style/ButtonTwo"
                             android:onClick="resetButton"
-                            android:text="rematch" />
+                            android:text="@string/rematch" />
 
                     </LinearLayout>
 
@@ -221,7 +221,7 @@
                             android:id="@+id/blue_button"
                             style="@style/ButtonThree"
                             android:onClick="plusOneBlue"
-                            android:text="blue +1" />
+                            android:text="@string/blue_1" />
 
                     </LinearLayout>
                 </LinearLayout>

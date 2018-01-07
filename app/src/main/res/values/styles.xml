@@ -134,7 +134,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">#000</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="TextViewNumber" parent="AppTheme">
@@ -143,7 +143,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">52sp</item>
-        <item name="android:textColor">#000</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="RelativeTwo" parent="AppTheme">
@@ -225,7 +225,7 @@
     <style name="ButtonOne" parent="AppTheme">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#FF0000</item>
+        <item name="android:textColor">@color/red</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
@@ -238,12 +238,8 @@
     <style name="ButtonThree" parent="AppTheme">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#0000FF</item>
+        <item name="android:textColor">@color/blue</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
-
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="#FF0000"
 </resources>
